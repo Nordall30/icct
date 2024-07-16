@@ -36,17 +36,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-     // Sign out function
-    const signOutButton = document.getElementById('sign-out-dropdown');
-    if (signOutButton) {
-        signOutButton.addEventListener('click', () => {
+      const logoutBtn = document.querySelector('#logout-btn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             signOut(auth).then(() => {
                 // Sign-out successful, redirect to login page
-                window.location.href = 'index.html';
+                window.location.href = 'login.html';
             }).catch((error) => {
                 // An error happened during sign-out
                 console.error('Sign Out Error:', error);
             });
         });
+    } else {
+        console.error('Logout Button not found');
     }
 });
