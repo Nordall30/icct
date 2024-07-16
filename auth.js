@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Sign out function
-    const signOutButton = document.getElementById('sign-out-button');
+     // Sign out function
+    const signOutButton = document.getElementById('sign-out-dropdown');
     if (signOutButton) {
         signOutButton.addEventListener('click', () => {
             signOut(auth).then(() => {
