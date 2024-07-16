@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         signOutButton.addEventListener('click', () => {
             signOut(auth).then(() => {
                 // Sign-out successful, redirect to login page
-                window.location.href = 'login.html';
+                window.location.href = 'index.html';
             }).catch((error) => {
                 // An error happened during sign-out
                 console.error('Sign Out Error:', error);
