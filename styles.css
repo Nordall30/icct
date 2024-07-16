@@ -377,7 +377,7 @@ input[type="submit"]:hover {
             width: 100%;
         }
 
-#library-section .container {
+.container {
     width: 80%;
     max-width: 600px;
     margin: 20px auto;
@@ -387,20 +387,20 @@ input[type="submit"]:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#library-section  h2 {
+h2 {
     text-align: center;
 }
 
-#library-section  form {
+form {
     display: flex;
     flex-direction: column;
 }
 
-#library-section label {
+label {
     margin-bottom: 8px;
 }
 
-#library-section input,
+input,
 select {
     padding: 8px;
     margin-bottom: 16px;
@@ -408,7 +408,7 @@ select {
     border-radius: 4px;
 }
 
-#library-section button {
+button {
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
@@ -417,10 +417,10 @@ select {
     cursor: pointer;
 }
 
-#library-section button:hover {
+button:hover {
     background-color: #0056b3;
 }
-#library-section .popup {
+.popup {
     display: none;
     position: fixed;
     z-index: 1;
@@ -432,7 +432,7 @@ select {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-#library-section .popup-content {
+.popup-content {
     background-color: white;
     margin: 15% auto;
     padding: 20px;
@@ -443,14 +443,14 @@ select {
     position: relative;
 }
 
-#library-section .close {
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-#library-section .close:hover,
+.close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
