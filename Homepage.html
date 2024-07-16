@@ -142,24 +142,24 @@
             <li class="dropdown">
                 <a href="#" class="dropbtn">Registrar</a>
                 <div class="dropdown-content">
-                    <a href="#">Admissions</a>
-                    <a href="#">Courses</a>
+                    <a href="#" id="documents-link">Documents</a>
                 </div>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropbtn">Accounting</a>
                 <div class="dropdown-content">
-                    <a href="#" id="billing-link">Billing</a>
+                    <a href="#">Payments</a>
+                    <a href="#" id="billing-link">Other Related Payments</a>
                 </div>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropbtn">Others</a>
                 <div class="dropdown-content">
                     <a href="#" id="guidance-office-link">Guidance Office</a>
-                    <a href="#">Academics</a>
-                    <a href="#">Library</a>
-                    <a href="#">Stocks</a>
-                    <a href="#">Prof/Teachers</a>
+                    <a href="#" id="academics-link">Academics</a>
+                    <a href="#" id="library-link">Library</a>
+                    <a href="#" id="stocks-link">Stocks</a>
+                    <a href="#" id="prof-link">Prof/Teachers</a>
                 </div>
             </li>
             <li class="dropdown">
@@ -540,7 +540,207 @@
        </p>
  </body>
 </div>
+<div class="container" id="academics-section">
+  <div id="courseSelection" class="hidden"> 
+   <h2>Select Course</h2> <select id="courseList"> 
+   <option value="BSC">BSC</option> 
+   <option value="BSISM">BSISM</option> 
+   <option value="BSPA">BSPA</option> 
+   <option value="BSHM">BSHM</option> 
+   <option value="BSMT">BSMT</option> 
+   <option value="BSEd">BSEd</option> 
+   <option value="BSME">BSME</option> 
+   <option value="BSELE">BSELE</option> 
+   <option value="BSMedTech">BSMedTech</option> 
+   <option value="BSIT">BSIT</option> 
+   <option value="ACT">ACT</option> 
+   <option value="BSCS">BSCS</option> 
+   <option value="BSIS">BSIS</option> 
+   <option value="BSCE">BSCE</option> </select> 
+   <h3>Enter Your Concern</h3> 
+    <textarea id="concernInput" rows="4" cols="50" placeholder="Enter your concern here..."></textarea> 
+   <br>
+   <br> <button id="submitButton">SUBMIT</button> 
+  </div>
+</div> 
+<div class="container" id="library-section">
+        <h2>Library Complaint</h2>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
 
+            <label for="email">Student Number:</label>
+            <input type="number" id="Number" name="Number" required>
+
+            <label for="id_type">College Level:</label>
+            <select id="id_type" name="id_type" required>
+                <option value="passport">First Year</option>
+                <option value="driver_license">Second Year</option>
+                <option value="id_card">Third Year</option>
+                <option value="id_card">Fourth Year</option>
+            </select>
+
+            <label for="msssing">Missing Items:</label>
+            <select id="msssing" name="missing" required>
+                <option value="Books">Books</option>
+                <option value="ID">ID</option>
+                <option value="Cellphone">Cellphone</option>
+                <option value="Bag">Bag</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <label for="Texst box">
+                <p>Complaint Box:</p>
+                <textarea rows="4" cols="50" name="comment" form="usrform"></textarea>
+            </label>
+        <p id="demo"></p>
+            <button type="submit" onclick="togglePopup()">Submit Registration</button>
+        </form>
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <span class="close" onclick="togglePopup()">&times;</span>
+                <p>Thank You For Complaint</p>
+            </div>
+<style>
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input,
+select {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+        </div>
+</div>
+<div class="container" id="stocks-section">
+        <h1>STOCKS</h1>
+        <form id="complaintForm" onsubmit="submitForm(event)">
+            <label for="stockSelect">Select a Stock:</label>
+            <select id="stockSelect" name="stock">
+                <option value="Uniforms">Uniforms</option>
+                <option value="PE Tshirt">PE Tshirt</option>
+                <option value="Jogger">Jogger</option>
+                <option value="NSTP">NSTP</option>
+                <option value="ID">ID</option>
+                <option value="Other">Other Uniforms/Concerns</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="complaintFormContainer" class="hidden">
+            <form id="specificComplaintForm" onsubmit="submitSpecificForm(event)">
+                <label for="complaint">Complaint:</label>
+                <textarea id="complaint" name="complaint" required></textarea>
+                <span id="complaintWarning" class="hidden">Please enter a valid complaint.</span>
+                <button type="submit">Submit Complaint</button>
+            </form>
+        </div>
+        <div id="acknowledgment" class="hidden">
+            <p>Thank you for submitting your concern.</p>
+        </div>
+      <link rel="stylesheet" href="stocks.css">	
+</div>
+<div class="container" id="prof-section">
+   <h1>Professor Concern Form</h1>
+    <form>
+        <label for="professor">Select Professor:</label>
+        <select id="professor" name="professor">
+            <option value="moises_joy_alvarez">Moises Joy Alvarez</option>
+            <option value="ronaldo_o_luna_jr">Ronaldo O. Luna Jr.</option>
+            <option value="jerico_vilog">Jerico Vilog</option>
+            <option value="ariel_casimiro">Ariel Casimiro</option>
+            <option value="joriz_chiong">Joriz Chiong</option>
+        </select>
+        <br><br>
+        <label for="concern">Concern:</label>
+        <textarea id="concern" name="concern" rows="4" cols="50"></textarea>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+  <div class="container" id="documents-section"> 
+   <form action="action_page.php"> 
+   <label for="Document">DOCUMENT</label> 
+   <select id="Document" name="Document"> option value="Summarry of grades">SOG</option> 
+   <option value="Certificate of enrollment">COE</option> 
+   <option value="Certificate of Graduation">COG</option> 
+   <option value="Transcript of records">TOR</option> 
+   </select> <label for="Complaint">Complaint</label> 
+   <textarea id="Complaint" name="Complaint" placeholder="Write something.." style="height:200px"></textarea> 
+   <input type="submit" value="Submit"> 
+   </form> 
+   </div> 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const dashboardLink = document.getElementById('dashboard-link');
@@ -553,6 +753,17 @@
             const aboutSection = document.getElementById('about-section');
             const faqLink = document.getElementById('faq-link');
             const faqSection = document.getElementById('faq-section');
+            const academicsLink = document.getElementById('academics-link');
+            const academicsSection = document.getElementById('academics-section');
+            const libraryLink = document.getElementById('library-link');
+            const librarySection = document.getElementById('library-section');
+            const stocksLink = document.getElementById('stocks-link');
+            const stocksSection = document.getElementById('stocks-section');
+            const profLink = document.getElementById('prof-link');
+            const profSection = document.getElementById('prof-section');
+            const documentsLink = document.getElementById('documents-link');
+            const documentsSection = document.getElementById('documents-section');
+
 
             dashboardLink.addEventListener('click', (event) => {
                 event.preventDefault();
@@ -561,6 +772,11 @@
                 guidanceOfficeSection.style.display = 'none';
                 aboutSection.style.display = 'none';
                 faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
                 dashboardSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -571,6 +787,11 @@
                 dashboardSection.style.display = 'none';
                 aboutSection.style.display = 'none';
                 faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
                 guidanceOfficeSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -581,6 +802,11 @@
                 guidanceOfficeSection.style.display = 'none';
                 aboutSection.style.display = 'none';
                 faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
                 billingSection.scrollIntoView({ behavior: 'smooth' });
             });
             
@@ -591,6 +817,11 @@
                 guidanceOfficeSection.style.display = 'none';
                 aboutSection.style.display = 'block';
                 faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
                 aboutSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -600,10 +831,113 @@
                 dashboardSection.style.display = 'none';
                 guidanceOfficeSection.style.display = 'none';
                 aboutSection.style.display = 'none';
+                academicsSection.style.display = 'none';
                 faqSection.style.display = 'block';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
                 faqSection.scrollIntoView({ behavior: 'smooth' });
             });
+
+            academicsLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'none';
+                dashboardSection.style.display = 'none';
+                guidanceOfficeSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                faqSection.style.display = 'none';
+                academicsSection.style.display = 'block';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
+                academicsSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+             libraryLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'none';
+                dashboardSection.style.display = 'none';
+                guidanceOfficeSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'block';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
+                librarySection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+             stocksLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'none';
+                dashboardSection.style.display = 'none';
+                guidanceOfficeSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'block';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
+                stocksSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+             profLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'none';
+                dashboardSection.style.display = 'none';
+                guidanceOfficeSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'block';
+                documentsSection.style.display = 'none';
+                profSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+
+             documentsLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'none';
+                dashboardSection.style.display = 'none';
+                guidanceOfficeSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'block';
+                documentsSection.scrollIntoView({ behavior: 'smooth' });
+            });
         });
+
+function submitForm(event) {
+    event.preventDefault();
+    document.getElementById('complaintFormContainer').classList.remove('hidden');
+}
+
+function submitSpecificForm(event) {
+    event.preventDefault();
+    const complaint = document.getElementById('complaint').value.trim();
+
+    if (complaint === '' || !/^[a-zA-Z0-9,.!? ]*$/.test(complaint)) {
+        document.getElementById('complaintWarning').classList.remove('hidden');
+    } else {
+        document.getElementById('complaintWarning').classList.add('hidden');
+        document.getElementById('complaintFormContainer').classList.add('hidden');
+        document.getElementById('acknowledgment').classList.remove('hidden');
+        setTimeout(() => {
+            document.getElementById('acknowledgment').classList.add('hidden');
+        }, 3000); // Hide acknowledgment after 3 seconds
+        document.getElementById('specificComplaintForm').reset();
+    }
+}
     </script>
 </body>
 </html>
