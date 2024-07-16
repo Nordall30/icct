@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -16,11 +17,13 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const storage = getStorage(app);
 
 // Wait for the DOM to fully load before executing code
 document.addEventListener('DOMContentLoaded', function () {
     const profilesectionDiv = document.getElementById('profile-section');
     const userEmailSpan = document.getElementById('user-email');
+    const profileImg = document.getElementById('profile-img');
 
     // Check authentication state
     onAuthStateChanged(auth, (user) => {
@@ -29,6 +32,14 @@ document.addEventListener('DOMContentLoaded', function () {
             profilesectionDiv.style.display = 'block';
             userEmailSpan.textContent = user.email;
             // You can add more user information here as needed
+
+             // Check if user has a profile picture
+            if (user.photoURL) {
+                profileImg.src = user.photoURL;
+                 } else {
+                // If no profile picture, you can set a default or leave it blank
+                profileImg.src = 'default-profile-img.png'; // Example: Default image path
+            }
         } else {
             // No user is signed in, redirect to login page
             profilesectionDiv.style.display = 'none'; // Hide profile section if no user is signed in
