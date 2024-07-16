@@ -1,16 +1,12 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "your-api-key",
-    authDomain: "your-auth-domain",
-    databaseURL: "your-database-url",
-    projectId: "your-project-id",
-    storageBucket: "your-storage-bucket",
-    messagingSenderId: "your-sender-id",
-    appId: "your-app-id"
+    apiKey: "AIzaSyDYrcXkSzYNauCY6QypJKtNk_IVHYmn6Gs",
+    authDomain: "login-fc3db.firebaseapp.com",
+    databaseURL: "https://login-fc3db-default-rtdb.firebaseio.com",
+    projectId: "login-fc3db",
+    storageBucket: "login-fc3db.appspot.com",
+    messagingSenderId: "363044743065",
+    appId: "1:363044743065:web:a50a43257c1a12b9955508"
 };
 
 // Initialize Firebase
@@ -19,19 +15,19 @@ const auth = getAuth(app);
 
 // Wait for the DOM to fully load before executing code
 document.addEventListener('DOMContentLoaded', function () {
-    const profile-sectionDiv = document.getElementById('profile');
+    const profilesectionDiv = document.getElementById('profile-section');
     const userEmailSpan = document.getElementById('user-email');
 
     // Check authentication state
     onAuthStateChanged(auth, (user) => {
         if (user) {
             // User is signed in, display user info
-            profile-sectionDiv.style.display = 'block';
+            profilesectionDiv.style.display = 'block';
             userEmailSpan.textContent = user.email;
             // You can add more user information here as needed
         } else {
             // No user is signed in, redirect to login page
-            profile-sectionDiv.style.display = 'none'; // Hide profile section if no user is signed in
+            profilesectionDiv.style.display = 'none'; // Hide profile section if no user is signed in
             window.location.href = 'login.html';
         }
     });
