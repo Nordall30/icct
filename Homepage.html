@@ -129,7 +129,7 @@
                 <a href="#" class="dropbtn">Home</a>
                 <div class="dropdown-content">
                     <a href="#" id="dashboard-link">Dashboard</a>
-                    <a href="#">Profile</a>
+                    <a href="#" id="profile-link">Profile</a>
                     <a href="#">Settings</a>
                 </div>
             </li>
@@ -740,7 +740,12 @@ button:hover {
    <textarea id="Complaint" name="Complaint" placeholder="Write something.." style="height:200px"></textarea> 
    <input type="submit" value="Submit"> 
    </form> 
-   </div> 
+   </div>
+      <div class="container" id="profile-section" style="display: none;">
+            <h2>User Profile</h2>
+            <p>Email: <span id="user-email"></span></p>
+            <!-- Add more user information as needed -->
+        </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const dashboardLink = document.getElementById('dashboard-link');
@@ -763,6 +768,9 @@ button:hover {
             const profSection = document.getElementById('prof-section');
             const documentsLink = document.getElementById('documents-link');
             const documentsSection = document.getElementById('documents-section');
+            const profileLink = document.getElementById('profile-link');
+            const profileSection = document.getElementById('profile-section');
+
 
 
             dashboardLink.addEventListener('click', (event) => {
@@ -777,6 +785,7 @@ button:hover {
                 stocksSection.style.display = 'none';
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
                 dashboardSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -792,6 +801,7 @@ button:hover {
                 stocksSection.style.display = 'none';
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
                 guidanceOfficeSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -807,6 +817,7 @@ button:hover {
                 stocksSection.style.display = 'none';
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
                 billingSection.scrollIntoView({ behavior: 'smooth' });
             });
             
@@ -822,6 +833,7 @@ button:hover {
                 stocksSection.style.display = 'none';
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
                 aboutSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -837,6 +849,7 @@ button:hover {
                 stocksSection.style.display = 'none';
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
                 faqSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -852,6 +865,7 @@ button:hover {
                 stocksSection.style.display = 'none';
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
                 academicsSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -867,6 +881,7 @@ button:hover {
                 stocksSection.style.display = 'none';
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
                 librarySection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -882,6 +897,7 @@ button:hover {
                 stocksSection.style.display = 'block';
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
                 stocksSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -897,6 +913,7 @@ button:hover {
                 stocksSection.style.display = 'none';
                 profSection.style.display = 'block';
                 documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
                 profSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -913,7 +930,24 @@ button:hover {
                 stocksSection.style.display = 'none';
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'block';
+                profileSection.style.display = 'none';
                 documentsSection.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            profileLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'none';
+                dashboardSection.style.display = 'none';
+                guidanceOfficeSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
+                profileSection.style.display = 'block';
+                profileSection.scrollIntoView({ behavior: 'smooth' });
             });
         });
 
