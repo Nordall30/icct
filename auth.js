@@ -21,6 +21,11 @@ const auth = getAuth(app);
 onAuthStateChanged(auth, (user) => {
     if (!user) {
         // No user is signed in, redirect to login page
-        window.location.href = 'index.html';
+        window.location.href = 'login.html';
+    } else {
+        // User is signed in, display user info
+        document.getElementById('profile').style.display = 'block';
+        document.getElementById('user-email').textContent = user.email;
+        // Fetch and display more user info if needed
     }
 });
