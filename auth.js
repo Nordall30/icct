@@ -21,7 +21,7 @@ const auth = getAuth(app);
 document.addEventListener('DOMContentLoaded', function () {
     // Check authentication state
     onAuthStateChanged(auth, (user) => {
-        const profileDiv = document.getElementById('profile');
+        const profile-sectionDiv = document.getElementById('profile');
         
         if (user) {
             // User is signed in, display user info
