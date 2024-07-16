@@ -4,28 +4,36 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDYrcXkSzYNauCY6QypJKtNk_IVHYmn6Gs",
-    authDomain: "login-fc3db.firebaseapp.com",
-    databaseURL: "https://login-fc3db-default-rtdb.firebaseio.com",
-    projectId: "login-fc3db",
-    storageBucket: "login-fc3db.appspot.com",
-    messagingSenderId: "363044743065",
-    appId: "1:363044743065:web:a50a43257c1a12b9955508"
+    apiKey: "your-api-key",
+    authDomain: "your-auth-domain",
+    databaseURL: "your-database-url",
+    projectId: "your-project-id",
+    storageBucket: "your-storage-bucket",
+    messagingSenderId: "your-sender-id",
+    appId: "your-app-id"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Check authentication state
-onAuthStateChanged(auth, (user) => {
-    if (!user) {
-        // No user is signed in, redirect to login page
-        window.location.href = 'login.html';
-    } else {
-        // User is signed in, display user info
-        document.getElementById('profile').style.display = 'block';
-        document.getElementById('user-email').textContent = user.email;
-        // Fetch and display more user info if needed
-    }
+// Wait for the DOM to fully load before executing code
+document.addEventListener('DOMContentLoaded', function () {
+    // Check authentication state
+    onAuthStateChanged(auth, (user) => {
+        const profileDiv = document.getElementById('profile');
+        
+        if (user) {
+            // User is signed in, display user info
+            profile-sectionDiv.style.display = 'block';
+            profile-sectionDiv.innerHTML = `
+                <h2>User Profile</h2>
+                <p>Email: ${user.email}</p>
+                <!-- Add more user information as needed -->
+            `;
+        } else {
+            // No user is signed in, redirect to login page
+            window.location.href = 'login.html';
+        }
+    });
 });
