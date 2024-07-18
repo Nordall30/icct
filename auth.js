@@ -94,3 +94,33 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Logout Button not found');
     }
 });
+
+
+ document.getElementById('student-complaint-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Get form values
+      const complaintType = document.querySelector('input[name="complaint-type"]:checked').value;
+      const complaintDescription = document.getElementById('complaint-description').value;
+      const studentName = document.getElementById('student-name').value;
+      const studentId = document.getElementById('student-id').value;
+      const email = document.getElementById('email').value;
+
+      // Save data to Firestore
+      db.collection("complaints").add({
+        complaintType: complaintType,
+        complaintDescription: complaintDescription,
+        studentName: studentName,
+        studentId: studentId,
+        email: email,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      })
+      .then(function() {
+        alert('Complaint submitted successfully!');
+        // Clear the form
+        document.getElementById('student-complaint-form').reset();
+      })
+      .catch(function(error) {
+        console.error('Error submitting complaint: ', error);
+      });
+    });
