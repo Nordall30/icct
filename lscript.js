@@ -98,3 +98,28 @@ links.forEach(link => {
        forms.classList.toggle("show-signup");
     })
 });
+
+
+// Login form
+document.getElementById('login-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    const name = document.getElementById('login-name').value; // Get name
+    const studentNumber = document.getElementById('login-student-number').value; // Get student number
+    console.log('Logging in with', email, password, name, studentNumber);
+    loginUser(email, password, name, studentNumber); // Pass to loginUser
+});
+
+// Signup form
+document.getElementById('signup-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    const email = document.getElementById('signup-email').value;
+    const password = document.getElementById('signup-password').value;
+    const name = document.getElementById('signup-name').value; // Get name
+    const studentNumber = document.getElementById('signup-student-number').value; // Get student number
+    console.log('Signing up with', email, password, name, studentNumber);
+    signupUser(email, password, name, studentNumber); // Pass to signupUser
+});
+
+
