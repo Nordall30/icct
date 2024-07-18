@@ -1,9 +1,203 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const guidanceOfficeLink = document.querySelector('.dropdown-content a[href="#"]');
-    const guidanceOfficeSection = document.getElementById('guidance-office-section');
+ document.addEventListener('DOMContentLoaded', () => {
+            const dashboardLink = document.getElementById('dashboard-link');
+            const dashboardSection = document.getElementById('dashboard-section');
+            const guidanceOfficeLink = document.getElementById('guidance-office-link');
+            const guidanceOfficeSection = document.getElementById('guidance-office-section');
+            const billingLink = document.getElementById('billing-link');
+            const billingSection = document.getElementById('billing-section');
+            const aboutLink = document.getElementById('about-link');
+            const aboutSection = document.getElementById('about-section');
+            const faqLink = document.getElementById('faq-link');
+            const faqSection = document.getElementById('faq-section');
+            const academicsLink = document.getElementById('academics-link');
+            const academicsSection = document.getElementById('academics-section');
+            const libraryLink = document.getElementById('library-link');
+            const librarySection = document.getElementById('library-section');
+            const stocksLink = document.getElementById('stocks-link');
+            const stocksSection = document.getElementById('stocks-section');
+            const profLink = document.getElementById('prof-link');
+            const profSection = document.getElementById('prof-section');
+            const documentsLink = document.getElementById('documents-link');
+            const documentsSection = document.getElementById('documents-section');
+            const profileLink = document.getElementById('profile-link');
+            const profileSection = document.getElementById('profile-section');
 
-    guidanceOfficeLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        guidanceOfficeSection.style.display = 'block';
-    });
-});
+
+
+            dashboardLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'none';
+                dashboardSection.style.display = 'flex';
+                guidanceOfficeSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
+                dashboardSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            guidanceOfficeLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'none';
+                guidanceOfficeSection.style.display = 'block';
+                dashboardSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
+                guidanceOfficeSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            billingLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'block';
+                dashboardSection.style.display = 'none';
+                guidanceOfficeSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
+                billingSection.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            aboutLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'none';
+                dashboardSection.style.display = 'none';
+                guidanceOfficeSection.style.display = 'none';
+                aboutSection.style.display = 'block';
+                faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            faqLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'none';
+                dashboardSection.style.display = 'none';
+                guidanceOfficeSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                faqSection.style.display = 'block';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
+                faqSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            academicsLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'none';
+                dashboardSection.style.display = 'none';
+                guidanceOfficeSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                faqSection.style.display = 'none';
+                academicsSection.style.display = 'block';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
+                academicsSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+             libraryLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'none';
+                dashboardSection.style.display = 'none';
+                guidanceOfficeSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'block';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
+                librarySection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+             stocksLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'none';
+                dashboardSection.style.display = 'none';
+                guidanceOfficeSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'block';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
+                stocksSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+             profLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'none';
+                dashboardSection.style.display = 'none';
+                guidanceOfficeSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'block';
+                documentsSection.style.display = 'none';
+                profileSection.style.display = 'none';
+                profSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+
+             documentsLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'none';
+                dashboardSection.style.display = 'none';
+                guidanceOfficeSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'block';
+                profileSection.style.display = 'none';
+                documentsSection.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            profileLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                billingSection.style.display = 'none';
+                dashboardSection.style.display = 'none';
+                guidanceOfficeSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                faqSection.style.display = 'none';
+                academicsSection.style.display = 'none';
+                librarySection.style.display = 'none';
+                stocksSection.style.display = 'none';
+                profSection.style.display = 'none';
+                documentsSection.style.display = 'none';
+                profileSection.style.display = 'block';
+                profileSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
