@@ -69,12 +69,24 @@
             <ul>  
                 <li>  
                     <input value="Dropping Problem" name="complaint-type" id="dropping-problem" type="radio">  
-                    <label for="dropping-problem">Dropping Problem (e.g. unable to drop a course)</label>  
+                    <label for="dropping-problem">Dropping Problem</label>  
                 </li>  
                 <li>  
                     <input value="Grade Problem" name="complaint-type" id="grade-problem" type="radio">  
-                    <label for="grade-problem">Grade Problem (e.g. incorrect grade, missing grade)</label>  
+                    <label for="grade-problem">Grade Problem</label>  
                 </li>  
+                <li>  
+                    <input value="Change Schedule" name="complaint-type" id="Change Schedule" type="radio">  
+                    <label for="Change Schedule">Change Schedule</label>  
+                </li>  
+                <li>  
+                    <input value="Report A Person(Bully)" name="complaint-type" id="Report A Person" type="radio">  
+                    <label for="Report A Person">Report A Person(Bully)</label>  
+                </li> 
+                <li>  
+                    <input value="Other Related Complaint/Concern" name="complaint-type" id="other" type="radio">  
+                    <label for="Report A Person">Other Related Complaint/Concern</label>  
+                </li>
             </ul>  
             <p>Please provide a detailed description of your complaint:</p>  
             <textarea cols="50" rows="5" name="complaint-description" id="complaint-description"></textarea>  
@@ -199,7 +211,7 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" required></textarea>
                 
-                <button type="submit">Submit</button>
+                <button type="submit">Submit Complaint</button>
             </form>
         </section>
     </div>
@@ -440,11 +452,13 @@
    <option value="ACT">ACT</option> 
    <option value="BSCS">BSCS</option> 
    <option value="BSIS">BSIS</option> 
-   <option value="BSCE">BSCE</option> </select> 
+   <option value="BSCE">BSCE</option> 
+   <option value="Other Courses">Other Courses</option>
+   </select> 
    <h3>Enter Your Concern</h3> 
     <textarea id="concernInput" rows="4" cols="50" placeholder="Enter your concern here..."></textarea> 
    <br>
-   <br> <button id="submitButton">SUBMIT</button> 
+   <br> <button id="submitButton">Submit Complaint</button> 
   </div>
 </div> 
 <div class="container" id="library-section">
