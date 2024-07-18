@@ -128,10 +128,23 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
-const user = auth.currentUser; // Get the User object
+const user = auth.currentUser;
 if (user) {
-  await user.updateProfile({ photoURL: downloadURL }); 
+    try {
+        await updateProfile(user, { photoURL: downloadURL });
+        // Successfully updated profile photoURL
+        console.log('Profile picture updated successfully.');
+    } catch (error) {
+        console.error('Error updating profile picture:', error);
+    }
 } else {
-  console.log("No user is signed in.");
+    console.error('No user signed in.');
 }
+
+async function updateProfile(user, profileUpdates) {
+    // You can implement custom logic to update the profile
+    // Here's a simple example:
+    await setDoc(doc(db, 'users', user.uid), profileUpdates, { merge: true });
+}
+
 
