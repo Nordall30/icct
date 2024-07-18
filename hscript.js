@@ -1,3 +1,26 @@
+function submitForm(event) {
+    event.preventDefault();
+    document.getElementById('complaintFormContainer').classList.remove('hidden');
+}
+
+function submitSpecificForm(event) {
+    event.preventDefault();
+    const complaint = document.getElementById('complaint').value.trim();
+
+    if (complaint === '' || !/^[a-zA-Z0-9,.!? ]*$/.test(complaint)) {
+        document.getElementById('complaintWarning').classList.remove('hidden');
+    } else {
+        document.getElementById('complaintWarning').classList.add('hidden');
+        document.getElementById('complaintFormContainer').classList.add('hidden');
+        document.getElementById('acknowledgment').classList.remove('hidden');
+        setTimeout(() => {
+            document.getElementById('acknowledgment').classList.add('hidden');
+        }, 3000); // Hide acknowledgment after 3 seconds
+        document.getElementById('specificComplaintForm').reset();
+    }
+}
+
+
  document.addEventListener('DOMContentLoaded', () => {
             const dashboardLink = document.getElementById('dashboard-link');
             const dashboardSection = document.getElementById('dashboard-section');
