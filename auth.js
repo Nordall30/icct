@@ -20,6 +20,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const storage = getStorage(app);
+const db = getFirestore(app);
 
 // Wait for the DOM to fully load before executing code
 document.addEventListener('DOMContentLoaded', function () {
