@@ -185,6 +185,13 @@
                         <td>1,700</td>
                         <td>425 per quarter</td>
                     </tr>
+                    <tr>
+                        <td>FOR OTHER COURSES TUITION FEE ETC. PLEASE KINDLY CALL US OR VISIT US</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                 </tbody>
             </table>
         </section>
@@ -211,7 +218,7 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" required></textarea>
                 
-                <button type="submit">Submit Complaint</button>
+                <button id="submit" onclick="togglePopup()">Submit Concern/Complaint</button>
             </form>
         </section>
     </div>
@@ -219,7 +226,7 @@
 <div class="container" id="about-section">
         <section id="overview">
             <h2>Overview</h2>
-            <p>WICCT Colleges is a tertiary education provider with campuses located in the Province of Rizal, Philippines. In Rizal, it has campuses in the municipality of Cainta, Sumulong (Cainta), San Mateo, Cogeo, Antipolo, Taytay, Binangonan, and Angono. Course offerings include Arts & Sciences, Business, Computer, Criminology, Education, Engineering, Health Sciences, Hospitality & Tourism Management, Short Term/Certificate Programs, And SENIOR HIGH SCHOOL (Grade 11 & 12).</p>
+            <p>ICCT Colleges is a tertiary education provider with campuses located in the Province of Rizal, Philippines. In Rizal, it has campuses in the municipality of Cainta, Sumulong (Cainta), San Mateo, Cogeo, Antipolo, Taytay, Binangonan, and Angono. Course offerings include Arts & Sciences, Business, Computer, Criminology, Education, Engineering, Health Sciences, Hospitality & Tourism Management, Short Term/Certificate Programs, And SENIOR HIGH SCHOOL (Grade 11 & 12).</p>
         </section>
         <section id="mission-vision">
             <h2>Mission & Vision</h2>
@@ -458,7 +465,7 @@
    <h3>Enter Your Concern</h3> 
     <textarea id="concernInput" rows="4" cols="50" placeholder="Enter your concern here..."></textarea> 
    <br>
-   <br> <button id="submitButton">Submit Complaint</button> 
+   <br> <button id="submit" onclick="togglePopup()">Submit Concern/Complaint</button> 
   </div>
 </div> 
 <div class="container" id="library-section">
@@ -491,7 +498,7 @@
                 <textarea rows="4" cols="50" name="comment" form="usrform"></textarea>
             </label>
         <p id="demo"></p>
-            <button type="submit" onclick="togglePopup()">Submit Concern/Complaint</button>
+            <button id="submit" onclick="togglePopup()">Submit Concern/Complaint</button>
         </form>
         <div class="popup" id="popup">
             <div class="popup-content">
@@ -593,14 +600,14 @@ button:hover {
                 <option value="ID LACE">ID LACE</option>
                 <option value="Other">Other Uniforms/Concerns</option>
             </select>
-            <button type="submit">Submit Concern/Complaint</button>
+            <button id="submit" onclick="togglePopup()">Submit Concern/Complaint</button>
         </form>
         <div id="complaintFormContainer" class="hidden">
             <form id="specificComplaintForm" onsubmit="submitSpecificForm(event)">
                 <label for="complaint">Complaint:</label>
                 <textarea id="complaint" name="complaint" required></textarea>
                 <span id="complaintWarning" class="hidden">Please enter a valid complaint.</span>
-                <button type="submit">Submit Complaint</button>
+                <button id="submit" onclick="togglePopup()">Submit Concern/Complaint</button>
             </form>
         </div>
         <div id="acknowledgment" class="hidden">
@@ -618,12 +625,13 @@ button:hover {
             <option value="jerico_vilog">Jerico Vilog</option>
             <option value="ariel_casimiro">Ariel Casimiro</option>
             <option value="joriz_chiong">Joriz Chiong</option>
+            <option value="Other">Other Prof/ Teacher's Name</option>
         </select>
         <br><br>
         <label for="concern">Concern:</label>
         <textarea id="concern" name="concern" rows="4" cols="50"></textarea>
         <br><br>
-        <button type="submit">Submit</button>
+        <button id="submit" onclick="togglePopup()">Submit Concern/Complaint</button>
     </form>
 </div>
 
@@ -647,7 +655,7 @@ button:hover {
             <img id="profile-img" src="" alt="Profile Picture">
             <form id="profile-form">
             <input type="file" id="file-input" accept="image/*">
-            <button type="submit">Upload Profile Picture</button>
+            <button id="submit">Upload Profile Picture</button>
             </form>
             <!-- Add more user information as needed -->
             <button id="logout-btn">Logout</button>
