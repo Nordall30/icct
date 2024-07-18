@@ -201,3 +201,9 @@
                 profileSection.scrollIntoView({ behavior: 'smooth' });
             });
         });
+
+
+// Assuming you have logic for checking login status and authentication
+// After successful login:
+document.getElementById('dashboard-link').style.display = 'block';
+
