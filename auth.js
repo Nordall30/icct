@@ -141,10 +141,5 @@ if (user) {
     console.error('No user signed in.');
 }
 
-async function updateProfile(user, profileUpdates) {
-    // You can implement custom logic to update the profile
-    // Here's a simple example:
-    await setDoc(doc(db, 'users', user.uid), profileUpdates, { merge: true });
-}
 
 
