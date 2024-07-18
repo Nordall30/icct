@@ -127,3 +127,11 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Error submitting complaint: ', error);
       });
     });
+
+const user = auth.currentUser; // Get the User object
+if (user) {
+  await user.updateProfile({ photoURL: downloadURL }); 
+} else {
+  console.log("No user is signed in.");
+}
+
