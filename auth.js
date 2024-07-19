@@ -25,6 +25,7 @@ const db = getFirestore(app);
 // Wait for the DOM to fully load before executing code
 document.addEventListener('DOMContentLoaded', function () {
     const profilesectionDiv = document.getElementById('profile-section');
+    const dashboardSection = document.getElementById('dashboard-section');
     const userEmailSpan = document.getElementById('user-email');
     const profileImg = document.getElementById('profile-img');
 
