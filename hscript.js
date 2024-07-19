@@ -1,10 +1,10 @@
 function submitForm(event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevent the default form submission behavior
     document.getElementById('complaintFormContainer').classList.remove('hidden');
 }
 
 function submitSpecificForm(event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevent the default form submission behavior
     const complaint = document.getElementById('complaint').value.trim();
 
     if (complaint === '' || !/^[a-zA-Z0-9,.!? ]*$/.test(complaint)) {
@@ -19,6 +19,13 @@ function submitSpecificForm(event) {
         document.getElementById('specificComplaintForm').reset();
     }
 }
+
+// Add the DOMContentLoaded event listener to ensure the functions are bound correctly
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('complaintForm').addEventListener('submit', submitForm);
+    document.getElementById('specificComplaintForm').addEventListener('submit', submitSpecificForm);
+});
+
 
 
  document.addEventListener('DOMContentLoaded', () => {
