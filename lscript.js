@@ -20,18 +20,30 @@ const firestore = getFirestore(app);
 
 // Function to validate inputs
 function validateInputs(name, studentNumber) {
+    // Basic format checks (customize as needed)
+    const namePattern = /^[a-zA-Z\s]+$/; // Only letters and spaces
+    const studentNumberPattern = /^[0-9]{8}$/; // Example: 8 digits
+
     if (!name || name.trim() === '') {
         alert('Name is required.');
+        return false;
+    }
+    if (!namePattern.test(name)) {
+        alert('Name must contain only letters and spaces.');
         return false;
     }
     if (!studentNumber || studentNumber.trim() === '') {
         alert('Student Number is required.');
         return false;
     }
+    if (!studentNumberPattern.test(studentNumber)) {
+        alert('Student Number must be exactly 8 digits.');
+        return false;
+    }
     return true;
 }
 
-// Signup function
+// Updated Signup function
 function signupUser(email, password, name, studentNumber) {
     if (!validateInputs(name, studentNumber)) {
         return;
@@ -57,22 +69,7 @@ function signupUser(email, password, name, studentNumber) {
         });
 }
 
-// Function to save user profile to Firestore
-function saveUserProfile(userId, name, studentNumber, email) {
-    setDoc(doc(firestore, 'users', userId), {
-        name: name,
-        studentNumber: studentNumber,
-        email: email
-    })
-    .then(() => {
-        console.log("User profile saved successfully");
-    })
-    .catch((error) => {
-        console.error("Error saving user profile: ", error);
-    });
-}
-
-// Login function
+// Updated Login function
 function loginUser(email, password, name, studentNumber) {
     if (!validateInputs(name, studentNumber)) {
         return;
@@ -103,6 +100,7 @@ function loginUser(email, password, name, studentNumber) {
             alert(`Error: ${errorMessage}`);
         });
 }
+
 
 // Event listeners for form submissions
 document.getElementById('login-form').addEventListener('submit', (event) => {
