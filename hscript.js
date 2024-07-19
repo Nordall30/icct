@@ -237,3 +237,23 @@ document.addEventListener('DOMContentLoaded', () => {
 // After successful login:
 document.getElementById('dashboard-link').style.display = 'block';
 
+document.addEventListener('DOMContentLoaded', () => {
+    const submitButtons = document.querySelectorAll('button[id="submit"]');
+    const acknowledgmentPopup = document.getElementById('acknowledgmentPopup');
+
+    submitButtons.forEach((button) => {
+        // Exclude the first button in the stock-section
+        if (!button.closest('#stock-section')) {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                acknowledgmentPopup.classList.remove('hidden');
+            });
+        }
+    });
+});
+
+function closePopup() {
+    document.getElementById('acknowledgmentPopup').classList.add('hidden');
+}
+
+
