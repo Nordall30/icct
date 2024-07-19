@@ -1,12 +1,11 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
 
-// Your web app's Firebase configuration
+// Your Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDYrcXkSzYNauCY6QypJKtNk_IVHYmn6Gs",
     authDomain: "login-fc3db.firebaseapp.com",
-    databaseURL: "https://login-fc3db-default-rtdb.firebaseio.com",
     projectId: "login-fc3db",
     storageBucket: "login-fc3db.appspot.com",
     messagingSenderId: "363044743065",
@@ -16,14 +15,19 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const firestore = getFirestore(app);
 
-// Login function
-function loginUser(email, password) {
-    signInWithEmailAndPassword(auth, email, password)
+// Signup function
+function signupUser(email, password, name, studentNumber) {
+    createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-            console.log('Login successful', user);
-            alert('Login successful!');
+            console.log('Signup successful', user);
+            alert('Signup successful!');
+
+            // Save additional user information to Firestore
+            saveUserProfile(user.uid, name, studentNumber, email);
+
             // Redirect to main page
             window.location.href = 'Homepage.html';
         })
@@ -35,13 +39,38 @@ function loginUser(email, password) {
         });
 }
 
-// Signup function
-function signupUser(email, password) {
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
+// Function to save user profile to Firestore
+function saveUserProfile(userId, name, studentNumber, email) {
+    setDoc(doc(firestore, 'users', userId), {
+        name: name,
+        studentNumber: studentNumber,
+        email: email
+    })
+    .then(() => {
+        console.log("User profile saved successfully");
+    })
+    .catch((error) => {
+        console.error("Error saving user profile: ", error);
+    });
+}
+
+// Login function
+function loginUser(email, password, name, studentNumber) {
+    signInWithEmailAndPassword(auth, email, password)
+        .then(async (userCredential) => {
             const user = userCredential.user;
-            console.log('Signup successful', user);
-            alert('Signup successful!');
+            console.log('Login successful', user);
+            alert('Login successful!');
+
+            // Check if user profile exists and update it if necessary
+            const userDoc = doc(firestore, 'users', user.uid);
+            const docSnap = await getDoc(userDoc);
+
+            if (!docSnap.exists()) {
+                // If user profile does not exist, create it
+                saveUserProfile(user.uid, name, studentNumber, email);
+            }
+
             // Redirect to main page
             window.location.href = 'Homepage.html';
         })
@@ -58,16 +87,18 @@ document.getElementById('login-form').addEventListener('submit', (event) => {
     event.preventDefault();
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
-    console.log('Logging in with', email, password);
-    loginUser(email, password);
+    const name = document.getElementById('login-name').value;
+    const studentNumber = document.getElementById('login-student-number').value;
+    loginUser(email, password, name, studentNumber);
 });
 
 document.getElementById('signup-form').addEventListener('submit', (event) => {
     event.preventDefault();
     const email = document.getElementById('signup-email').value;
     const password = document.getElementById('signup-password').value;
-    console.log('Signing up with', email, password);
-    signupUser(email, password);
+    const name = document.getElementById('signup-name').value;
+    const studentNumber = document.getElementById('signup-student-number').value;
+    signupUser(email, password, name, studentNumber);
 });
 
 // Show/Hide password functionality
@@ -98,28 +129,3 @@ links.forEach(link => {
        forms.classList.toggle("show-signup");
     })
 });
-
-
-// Login form
-document.getElementById('login-form').addEventListener('submit', (event) => {
-    event.preventDefault();
-    const email = document.getElementById('login-email').value;
-    const password = document.getElementById('login-password').value;
-    const name = document.getElementById('login-name').value; // Get name
-    const studentNumber = document.getElementById('login-student-number').value; // Get student number
-    console.log('Logging in with', email, password, name, studentNumber);
-    loginUser(email, password, name, studentNumber); // Pass to loginUser
-});
-
-// Signup form
-document.getElementById('signup-form').addEventListener('submit', (event) => {
-    event.preventDefault();
-    const email = document.getElementById('signup-email').value;
-    const password = document.getElementById('signup-password').value;
-    const name = document.getElementById('signup-name').value; // Get name
-    const studentNumber = document.getElementById('signup-student-number').value; // Get student number
-    console.log('Signing up with', email, password, name, studentNumber);
-    signupUser(email, password, name, studentNumber); // Pass to signupUser
-});
-
-
