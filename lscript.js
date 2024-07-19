@@ -19,6 +19,15 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
+// Function to display user profile
+function displayUserProfile(user, name, studentNumber) {
+    document.getElementById('user-email').innerText = user.email;
+    document.getElementById('user-name').innerText = name;
+    document.getElementById('user-student-id').innerText = studentNumber;
+    document.getElementById('profile-section').style.display = 'block';
+    document.querySelector('.forms').style.display = 'none';
+}
+
 // Signup function
 async function signupUser(email, password, name, studentNumber) {
     try {
@@ -32,9 +41,9 @@ async function signupUser(email, password, name, studentNumber) {
             name: name,
             studentNumber: studentNumber
         });
-        
-        // Redirect to main page
-        window.location.href = 'Homepage.html';
+
+        // Display user profile
+        displayUserProfile(user, name, studentNumber);
     } catch (error) {
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -66,16 +75,11 @@ async function loginUser(email, password) {
                 }, { merge: true });
             }
             
-            // Update profile section with retrieved data
-            document.getElementById('user-email').innerText = user.email;
-            document.getElementById('user-name').innerText = name;
-            document.getElementById('user-student-id').innerText = studentNumber;
+            // Display user profile
+            displayUserProfile(user, name, studentNumber);
         } else {
             console.log("No such document!");
         }
-        
-        // Redirect to main page
-        window.location.href = 'Homepage.html';
     } catch (error) {
         const errorCode = error.code;
         const errorMessage = error.message;
