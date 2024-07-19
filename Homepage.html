@@ -56,7 +56,6 @@
     </nav>
 <div class="container" id="payment-section">
         <h1>PAYMENTS</h1>
-        <form id="complaintForm1" onsubmit="submitForm(event)1">
     <label for="paymentSelect">Select the type of Payment/Concern:</label>
     <select id="paymentSelect" name="payment">
         <option value="TUITION">TUITION</option>
@@ -68,15 +67,10 @@
         <option value="CEBUANA/MLHULER">CEBUANA/MLHULER</option>
         <option value="Other">Other Payments/Concerns</option>
     </select>
-    <button type="submitx">Submit</button>
-</form>
-<div id="complaintFormContainer1" class="hidden">
-    <form id="specificComplaintForm1" onsubmit="submitSpecificForm(event)">
-        <label for="complaint1">Complaint:</label>
-        <textarea id="complaint1" name="complaint1" required></textarea>
-        <span id="complaintWarning1" class="hidden">Please enter a valid complaint.</span>
+<div id="Container1">
+        <label>Complaint:</label>
+        <textarea></textarea>
         <button type="submit">Submit Concern/Complaint</button>
-    </form>
 </div>
 </div>
      <div class="container" id="dashboard-section">
