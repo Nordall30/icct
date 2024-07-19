@@ -551,7 +551,7 @@
         <label for="concern">Concern:</label>
         <textarea id="concern" name="concern" rows="4" cols="50"></textarea>
         <br><br>
-        <button id="submit" onclick="togglePopup()">Submit Concern/Complaint</button>
+        <button type="submit" onclick="togglePopup()">Submit Concern/Complaint</button>
     </form>
 </div>
 
@@ -566,7 +566,7 @@
    <option value="OTHER">OTHER DOCUMENTS</option> 
    </select> <label for="Complaint">Complaint</label> 
    <textarea id="Complaint" name="Complaint" placeholder="Write something.." style="height:200px"></textarea> 
-   <input type="submit" value="Submit Complaint"> 
+   <button type="submit">Submit Complaint</button> 
    </form> 
    </div>
       <div class="container" id="profile-section" style="display: none;">
@@ -580,6 +580,12 @@
             <!-- Add more user information as needed -->
             <button id="logout-btn">Logout</button>
         </div>
+    <div id="complaintOverlay" class="complaint-overlay"></div>
+    <div id="complaintPopup" class="complaint-popup">
+    <p>Thank you for your complaints</p>
+    <button id="closeComplaintPopup">Close</button>
+</div>
+
 
      <script type="module" src="auth.js"></script>
     <script type="module" src="hscript.js"></script>
