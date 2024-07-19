@@ -32,7 +32,7 @@
             <li class="dropdown">
                 <a href="#" class="dropbtn">Accounting</a>
                 <div class="dropdown-content">
-                    <a href="#">Payments</a>
+                    <a href="#" id="payment-link">Payments</a>
                     <a href="#" id="billing-link">Other Related Payments</a>
                 </div>
             </li>
@@ -54,6 +54,34 @@
             </li>
         </ul>
     </nav>
+<div class="container" id="payment-section">
+        <h1>PAYMENTS</h1>
+        <form id="complaintForm" onsubmit="submitForm(event)">
+    <label for="stockSelect">Select a Payment:</label>
+    <select id="stockSelect" name="stock">
+        <option value="TUITION">TUITION</option>
+        <option value="DOWNPAYMENT">DOWNPAYMENT</option>
+        <option value="INSTALLMENT">INSTALLMENT</option>
+        <option value="UNIFORMS">UNIFORMS</option>
+        <option value="DOCUMENTS">DOCUMENTS</option>
+        <option value="GCASH">GCASH</option>
+        <option value="CEBUANA/MLHULER">CEBUANA/MLHULER</option>
+        <option value="Other">Other Payments/Concerns</option>
+    </select>
+    <button type="submitx">Submit</button>
+</form>
+<div id="complaintFormContainer" class="hidden">
+    <form id="specificComplaintForm" onsubmit="submitSpecificForm(event)">
+        <label for="complaint">Complaint:</label>
+        <textarea id="complaint" name="complaint" required></textarea>
+        <span id="complaintWarning" class="hidden">Please enter a valid complaint.</span>
+        <button type="submit">Submit Concern/Complaint</button>
+    </form>
+</div>
+<div id="acknowledgment" class="hidden">
+    <p>Thank you for submitting your concern.</p>
+</div>
+</div>
      <div class="container" id="dashboard-section">
         <img src="download.png" alt="Complaints ICCT">
         <div class="content">
@@ -507,7 +535,6 @@
 <div id="acknowledgment" class="hidden">
     <p>Thank you for submitting your concern.</p>
 </div>
-    <link rel="stylesheet" href="stocks.css">	
 </div>
 <div class="container" id="prof-section">
    <h1>Professor Concern Form</h1>
