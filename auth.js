@@ -32,7 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
     onAuthStateChanged(auth, (user) => {
         if (user) {
             // User is signed in, display user info
-            profilesectionDiv.style.display = 'block';
+            dashboardSection.style.display = 'flex';
+            profilesectionDiv.style.display = 'none';
             userEmailSpan.textContent = user.email;
             // You can add more user information here as needed
 
