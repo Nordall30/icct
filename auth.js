@@ -36,15 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
             dashboardSection.style.display = 'flex';
             profilesectionDiv.style.display = 'none';
             userEmailSpan.textContent = user.email;
-            // You can add more user information here as needed
-
-             // Check if user has a profile picture
-            if (user.photoURL) {
-                profileImg.src = user.photoURL;
-                 } else {
-                // If no profile picture, you can set a default or leave it blank
-                profileImg.src = 'default-profile-img.png'; // Example: Default image path
-            }
         } else {
             // No user is signed in, redirect to login page
             profilesectionDiv.style.display = 'none'; // Hide profile section if no user is signed in
@@ -52,38 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-      // Handle profile picture upload
-    const profileForm = document.getElementById('profile-form');
-    profileForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const fileInput = document.getElementById('file-input');
-        const file = fileInput.files[0];
-
-        if (file) {
-            try {
-                // Create a storage reference with user's UID and file name
-                const storageRef = ref(storage, `profile-pictures/${auth.currentUser.uid}/${file.name}`);
-
-                // Upload file to Firebase Storage
-                await uploadBytes(storageRef, file);
-
-                // Get download URL and update user profile
-                const downloadURL = await getDownloadURL(storageRef);
-                await auth.currentUser.updateProfile({ photoURL: downloadURL });
-
-                // Update profile image in UI
-                profileImg.src = downloadURL;
-
-                console.log('Profile picture uploaded and updated successfully.');
-            } catch (error) {
-                console.error('Error uploading profile picture:', error);
-            }
-        } else {
-            console.error('No file selected.');
-        }
-    });
-
-      const logoutBtn = document.querySelector('#logout-btn');
+    const logoutBtn = document.querySelector('#logout-btn');
     if (logoutBtn) {
         logoutBtn.addEventListener('click', (e) => {
             e.preventDefault();
