@@ -467,9 +467,6 @@
 </div> 
 <div class="container" id="library-section">
         <h2>Library Complaint</h2>
-            <label for="fullname">Full Name:</label>
-            <input type="text" id="fullname" name="fullname" required>
-
             <label for="email">Student Number:</label>
             <input type="number" id="Number" name="Number" required>
 
@@ -556,14 +553,14 @@
    </div>
       <div class="container" id="profile-section" style="display: none;">
             <h2>User Profile</h2>
-            <p>Email: <span id="user-email"></span></p>
-            <img id="profile-img" src="" alt="Profile Picture">
+            <center><p><span id="user-email"></span></p></center>
+            <center><img id="profile-img" src=""></center>
             <form id="profile-form">
             <input type="file" id="file-input" accept="image/*">
             <button id="submit">Upload Profile Picture</button>
             </form>
             <!-- Add more user information as needed -->
-            <button id="logout-btn">Logout</button>
+            <center><button id="logout-btn">Logout</button></center>
         </div>
     <div id="complaintOverlay" class="complaint-overlay"></div>
     <div id="complaintPopup" class="complaint-popup">
