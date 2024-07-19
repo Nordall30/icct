@@ -232,6 +232,41 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Get all submit buttons
+        var submitButtons = document.querySelectorAll("button[type='submit']");
+        
+        // Add click event listener to each button
+        submitButtons.forEach(function(button) {
+            button.addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent the form from submitting
+                showComplaintPopup();
+            });
+        });
+
+        // Function to show the popup
+        function showComplaintPopup() {
+            document.getElementById("complaintOverlay").style.display = "block";
+            document.getElementById("complaintPopup").style.display = "block";
+        }
+
+        // Function to hide the popup
+        function hideComplaintPopup() {
+            document.getElementById("complaintOverlay").style.display = "none";
+            document.getElementById("complaintPopup").style.display = "none";
+        }
+
+        // Close the popup when the close button is clicked
+        document.getElementById("closeComplaintPopup").addEventListener("click", function() {
+            hideComplaintPopup();
+        });
+
+        // Close the popup when the overlay is clicked
+        document.getElementById("complaintOverlay").addEventListener("click", function() {
+            hideComplaintPopup();
+        });
+    });
+
 
 // Assuming you have logic for checking login status and authentication
 // After successful login:
