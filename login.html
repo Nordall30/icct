@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Responsive Login and Signup Form</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="lstyle.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <section class="container forms">
+        <div class="form login">
+            <div class="form-content">
+                <header>Login</header>
+                <form id="login-form">
+                    <div class="field input-field">
+                         <input type="text" placeholder="Name" class="input" id="login-name"  autocomplete="off">
+                    </div>
+                    <div class="field input-field">
+                         <input type="text" placeholder="Student Number" class="input" id="login-student-number" autocomplete="off">
+                    </div>
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email" class="input" id="login-email" required>
+                    </div>
+                    <div class="field input-field">
+                        <input type="password" placeholder="Password" class="password" id="login-password" required>
+                        <i class='bx bx-hide eye-icon'></i>
+                    </div>
+                    <div class="form-link">
+                        <a href="#" class="forgot-pass">Forgot password?</a>
+                    </div>
+                    <div class="field button-field">
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
+                <div class="form-link">
+                    <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
+                </div>
+            </div>
+        </div>
+        <!-- Signup Form -->
+        <div class="form signup">
+            <div class="form-content">
+                <header>Signup</header>
+                <form id="signup-form">
+                    <div class="field input-field">
+                         <input type="text" placeholder="Name" class="input" id="signup-name" autocomplete="off">
+                    </div>
+                    <div class="field input-field">
+                         <input type="text" placeholder="Student Number" class="input" id="signup-student-number" autocomplete="off">
+                    </div>
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email" class="input" id="signup-email" required>
+                    </div>
+                    <div class="field input-field">
+                        <input type="password" placeholder="Create password" class="password" id="signup-password" required>
+                    </div>
+                    <div class="field input-field">
+                        <input type="password" placeholder="Confirm password" class="password" required>
+                        <i class='bx bx-hide eye-icon'></i>
+                    </div>
+                    <div class="field button-field">
+                        <button type="submit">Signup</button>
+                    </div>
+                </form>
+                <div class="form-link">
+                    <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- JavaScript -->
+    <script type="module" src="lscript.js"></script>
+    <script type="module" src="persistlogin.js"></script>
+</body>
+</html>
