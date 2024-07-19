@@ -14,7 +14,7 @@ body {
             position: relative; /* Ensure body positioning context */
         }
 nav {
-            background-color: #333;
+            background-color: #00008B;
             z-index: 10; /* Ensure nav is above other elements */
             position: relative;
         }
@@ -569,4 +569,21 @@ button:hover {
           #dashboard-section {
            overflow: hidden;
         }
-    
+
+
+.hidden {
+    display: none;
+}
+
+#acknowledgmentPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
