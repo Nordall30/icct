@@ -90,20 +90,7 @@
             </ul>  
             <p>Please provide a detailed description of your complaint:</p>  
             <textarea cols="50" rows="5" name="complaint-description" id="complaint-description"></textarea>  
-            <p>Contact Information:</p>
-            <div class="input-container">  
-                <label for="student-name">Student Name:</label>  
-                <input name="student-name" id="student-name" type="text">
-            </div>  
-            <div class="input-container">  
-                <label for="student-id">Student ID:</label>  
-                <input name="student-id" id="student-id" type="text">
-            </div>  
-            <div class="input-container">  
-                <label for="email">Email:</label>  
-                <input name="email" id="email" type="email">
-            </div>  
-            <input value="Submit Complaint" type="submit">  
+            <button type="submit">Submit Complaint</button>  
         </form>
     </div>
     <div class="container" id="billing-section">
@@ -209,16 +196,10 @@
         <section class="inquiry-form">
             <h2>For any inquiries, kindly message us</h2>
             <form action="#" method="post">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-                
                 <label for="message">Message</label>
                 <textarea id="message" name="message" required></textarea>
                 
-                <button id="submit" onclick="togglePopup()">Submit Concern/Complaint</button>
+                <button id="submit">Submit Concern/Complaint</button>
             </form>
         </section>
     </div>
@@ -465,7 +446,7 @@
    <h3>Enter Your Concern</h3> 
     <textarea id="concernInput" rows="4" cols="50" placeholder="Enter your concern here..."></textarea> 
    <br>
-   <br> <button id="submit" onclick="togglePopup()">Submit Concern/Complaint</button> 
+   <br> <button id="submit">Submit Concern/Complaint</button> 
   </div>
 </div> 
 <div class="container" id="library-section">
@@ -498,15 +479,8 @@
                 <textarea rows="4" cols="50" name="comment" form="usrform"></textarea>
             </label>
         <p id="demo"></p>
-            <button id="submit" onclick="togglePopup()">Submit Concern/Complaint</button>
+            <button type="submit">Submit Concern/Complaint</button>
         </form>
-        <div class="popup" id="popup">
-            <div class="popup-content">
-                <span class="close" onclick="togglePopup()">&times;</span>
-                <p>Thank You For Complaint</p>
-            </div>
-
-        </div>
 </div>
 <div class="container" id="stocks-section">
         <h1>STOCKS</h1>
@@ -551,7 +525,7 @@
         <label for="concern">Concern:</label>
         <textarea id="concern" name="concern" rows="4" cols="50"></textarea>
         <br><br>
-        <button type="submit" onclick="togglePopup()">Submit Concern/Complaint</button>
+        <button type="submit">Submit Concern/Complaint</button>
     </form>
 </div>
 
