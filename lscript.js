@@ -17,8 +17,26 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const firestore = getFirestore(app);
 
+
+// Function to validate inputs
+function validateInputs(name, studentNumber) {
+    if (!name || name.trim() === '') {
+        alert('Name is required.');
+        return false;
+    }
+    if (!studentNumber || studentNumber.trim() === '') {
+        alert('Student Number is required.');
+        return false;
+    }
+    return true;
+}
+
 // Signup function
 function signupUser(email, password, name, studentNumber) {
+    if (!validateInputs(name, studentNumber)) {
+        return;
+    }
+
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
@@ -56,6 +74,10 @@ function saveUserProfile(userId, name, studentNumber, email) {
 
 // Login function
 function loginUser(email, password, name, studentNumber) {
+    if (!validateInputs(name, studentNumber)) {
+        return;
+    }
+
     signInWithEmailAndPassword(auth, email, password)
         .then(async (userCredential) => {
             const user = userCredential.user;
@@ -129,3 +151,4 @@ links.forEach(link => {
        forms.classList.toggle("show-signup");
     })
 });
+
