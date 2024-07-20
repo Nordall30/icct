@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
             const dashboardLink = document.getElementById('dashboard-link');
             const dashboardSection = document.getElementById('dashboard-section');
+            const dashboard1Section = document.getElementById('dashboard-section1');
+            const dashboard2Section = document.getElementById('dashboard-section2');
             const guidanceOfficeLink = document.getElementById('guidance-office-link');
             const guidanceOfficeSection = document.getElementById('guidance-office-section');
             const billingLink = document.getElementById('billing-link');
@@ -31,6 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 event.preventDefault();
                 billingSection.style.display = 'none';
                 dashboardSection.style.display = 'flex';
+                dashboard1Section.style.display = 'block';
+                dashboard2Section.style.display = 'block';        
                 guidanceOfficeSection.style.display = 'none';
                 aboutSection.style.display = 'none';
                 faqSection.style.display = 'none';
@@ -57,7 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'none';
                 profileSection.style.display = 'none';
-                paymentSection.style.display = 'none';        
+                paymentSection.style.display = 'none';
+                dashboard1Section.style.display = 'none';
+                dashboard2Section.style.display = 'none';         
                 guidanceOfficeSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -74,7 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'none';
                 profileSection.style.display = 'none';
-                paymentSection.style.display = 'none';        
+                paymentSection.style.display = 'none';      
+                dashboard1Section.style.display = 'none';
+                dashboard2Section.style.display = 'none';         
                 billingSection.scrollIntoView({ behavior: 'smooth' });
             });
             
@@ -91,7 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'none';
                 profileSection.style.display = 'none';
-                paymentSection.style.display = 'none';        
+                paymentSection.style.display = 'none';
+                dashboard1Section.style.display = 'none';
+                dashboard2Section.style.display = 'none';         
                 aboutSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -108,7 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'none';
                 profileSection.style.display = 'none';
-                paymentSection.style.display = 'none';        
+                paymentSection.style.display = 'none';
+                dashboard1Section.style.display = 'none';
+                dashboard2Section.style.display = 'none';         
                 faqSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -125,7 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'none';
                 profileSection.style.display = 'none';
-                paymentSection.style.display = 'none';        
+                paymentSection.style.display = 'none';
+                dashboard1Section.style.display = 'none';
+                dashboard2Section.style.display = 'none';         
                 academicsSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -142,7 +156,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'none';
                 profileSection.style.display = 'none';
-                paymentSection.style.display = 'none';         
+                paymentSection.style.display = 'none';
+                dashboard1Section.style.display = 'none';
+                dashboard2Section.style.display = 'none';          
                 librarySection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -159,7 +175,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'none';
                 profileSection.style.display = 'none';
-                paymentSection.style.display = 'none';         
+                paymentSection.style.display = 'none';
+                dashboard1Section.style.display = 'none';
+                dashboard2Section.style.display = 'none';          
                 stocksSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -176,7 +194,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 profSection.style.display = 'block';
                 documentsSection.style.display = 'none';
                 profileSection.style.display = 'none';
-                paymentSection.style.display = 'none';         
+                paymentSection.style.display = 'none';
+                dashboard1Section.style.display = 'none';
+                dashboard2Section.style.display = 'none';          
                 profSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -195,6 +215,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 documentsSection.style.display = 'block';
                 profileSection.style.display = 'none';
                 paymentSection.style.display = 'none';
+                dashboard1Section.style.display = 'none';
+                dashboard2Section.style.display = 'none';          
                 documentsSection.scrollIntoView({ behavior: 'smooth' });
             });
             
@@ -212,6 +234,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 documentsSection.style.display = 'none';
                 profileSection.style.display = 'block';
                 paymentSection.style.display = 'none';
+                dashboard1Section.style.display = 'none';
+                dashboard2Section.style.display = 'none';         
                 profileSection.scrollIntoView({ behavior: 'smooth' });
             });
 
@@ -228,7 +252,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 profSection.style.display = 'none';
                 documentsSection.style.display = 'none';
                 profileSection.style.display = 'none';
-                paymentSection.style.display = 'block';        
+                paymentSection.style.display = 'block';
+                dashboard1Section.style.display = 'none';
+                dashboard2Section.style.display = 'none';         
                 paymentSection.scrollIntoView({ behavior: 'smooth' });
             });
         });
