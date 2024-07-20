@@ -94,6 +94,8 @@ nav ul li a:hover {
     text-align: left; /* Align text content to the left */
     margin-left: 20px; /* Add some margin between image and text */
     overflow: hidden;
+    display: block; /* Ensure the image container is a block element */
+}
 }
 
 h1 {
