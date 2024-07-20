@@ -683,19 +683,4 @@ select {
 
 
 
-/* Specific image container styling */
-.image-container {
-    margin: 20px 0;
-    display: block; /* Ensure the image container is a block element */
-}
-
-/* Responsive image styling */
-.responsive-image {
-    width: 100%;
-    height: auto;
-    max-width: 600px; /* Adjust as needed */
-    display: block; /* Ensure the image is a block element */
-    margin: 0 auto; /* Center the image */
-}
-
 
